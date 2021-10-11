@@ -19,7 +19,6 @@ public class Fighter {
             this.dodge = 0;
         }
 
-
     }
 
     int hit(Fighter foe) {
@@ -31,11 +30,7 @@ public class Fighter {
             return foe.health;
         }
 
-        if (foe.health - this.damage < 0) {
-            return 0;
-
-        }
-        return foe.health - this.damage;
+        return Math.max(foe.health - this.damage, 0);
     }
 
     boolean isDodge() {
